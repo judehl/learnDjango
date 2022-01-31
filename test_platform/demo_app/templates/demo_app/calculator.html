@@ -1,0 +1,83 @@
+<h1>计算器</h1>
+<!-- 表单方式提交 -->
+<!--    <form action="/calculator/" method="post"> 
+            <input type="text" name="number_a"> +
+            <input type="text" name="number_b"> = {{result}}
+            <input type="submit" value="计算" >
+       </form> 
+ -->
+<div>
+    <input type="text" id="number_a0"> +
+    <input type="text" id="number_b0"> = <span id='result_add'></span>
+    <button onclick="count1()">计算</button>
+</div>
+
+<div>
+    <input type="text" id="number_a1"> -
+    <input type="text" id="number_b1"> = <span id='result_sub'></span>
+    <button onclick="count2()">计算</button>
+</div>
+
+<div>
+    <input type="text" id="number_a2"> *
+    <input type="text" id="number_b2"> = <span id='result_mul'></span>
+    <button onclick="count3()">计算</button>
+</div>
+
+<div>
+    <input type="text" id="number_a3"> /
+    <input type="text" id="number_b3"> = <span id='result_div'></span>
+    <button onclick="count4()">计算</button>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+    function count1() {
+        var numberA = $('#number_a0').val()
+        var numberB = $('#number_b0').val()
+        $.post("/api/add/",
+            {
+                "number_a0": numberA,
+                "number_b0": numberB
+            },
+            function (result) {
+                document.querySelector('#result_add').innerText = result.data.sum
+            });
+    };
+    function count2() {
+        var numberA = $('#number_a1').val()
+        var numberB = $('#number_b1').val()
+        $.post("/api/sub/",
+            {
+                "number_a1": numberA,
+                "number_b1": numberB
+            },
+            function (result) {
+                document.querySelector('#result_sub').innerText = result.data.sub
+            });
+    };
+    function count3() {
+        var numberA = $('#number_a2').val()
+        var numberB = $('#number_b2').val()
+        $.post("/api/mul/",
+            {
+                "number_a2": numberA,
+                "number_b2": numberB
+            },
+            function (result) {
+                document.querySelector('#result_mul').innerText = result.data.mul
+            });
+    };
+    function count4() {
+        var numberA = $('#number_a3').val()
+        var numberB = $('#number_b3').val()
+        $.post("/api/div/",
+            {
+                "number_a3": numberA,
+                "number_b3": numberB
+            },
+            function (result) {
+                document.querySelector('#result_div').innerText = result.data.div
+            });
+    }
+</script>

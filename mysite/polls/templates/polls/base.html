@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>CRM Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/icons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app-creative-rtl.min.css' %}">
+    <link rel="stylesheet" type="text/css"  id="dark-style" href="{% static 'css/app-creative-dark-rtl.min.css' %}">
+
+</head>
+
+<body class="loading" data-layout="topnav"
+      data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'>
+<!-- Begin page -->
+<div class="wrapper">
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            <!-- Topbar Start -->
+            <div class="navbar-custom topnav-navbar topnav-navbar-dark">
+                <div class="container-fluid">
+
+                    <!-- LOGO -->
+                    <a href="" class="topnav-logo" style="margin-left: -50px; float: left">
+                        <span class="topnav-logo-lg">
+                            <img src="https://coderthemes.com/hyper_2/creative/assets/images/logo-light.png"
+                                 alt="" height="16">
+                        </span>
+                        <span class="topnav-logo-sm">
+                            <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                        </span>
+                    </a>
+
+                    <ul class="list-unstyled topbar-menu float-end mb-0">
+
+                    </ul>
+                    <a class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- end Topbar -->
+
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title" style="text-align: left">CRM</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+                {% block base %}
+                    {#这一部分可定制#}
+                {% endblock %}
+            </div>
+            <!-- container -->
+
+        </div>
+        <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <script>document.write(new Date().getFullYear())</script>
+                        © Hyper - Coderthemes.com
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-end footer-links d-none d-md-block">
+                            <a href="javascript: void(0);">About</a>
+                            <a href="javascript: void(0);">Support</a>
+                            <a href="javascript: void(0);">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+
+
+<!-- /End-bar -->
+
+<!-- bundle -->
+<script src="{% static 'js/vendor.min.js' %}"></script>
+<script src="{% static 'js/app.min.js' %}"></script>
+
+<!-- Apex js -->
+<script src="{% static 'js/apexcharts.min.js' %}"></script>
+
+<!-- Todo js -->
+<script src="{% static 'js/component.todo.js' %}"></script>
+
+<!-- demo app -->
+<script src="{% static 'js/demo.dashboard-crm.js' %}"></script>
+<!-- end demo js-->
+</body>
+</html>
