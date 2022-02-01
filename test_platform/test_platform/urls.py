@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from demo_app import views
-
+from api_app import views as api_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
     path('calculator/', views.calculator),
-    path('api/', include('demo_app.urls')),  # 分流到demo_app下url
+    path('demo/', include('demo_app.urls')),  # 分流到demo_app下url,
+    path('', api_views.ping),
+    path('api/', include('api_app.urls'))
 ]
