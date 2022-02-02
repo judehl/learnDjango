@@ -15,14 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api_app.user_view import UserViewSet
 from demo_app import views
 from api_app import views as api_views
+from rest_framework import routers
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
     path('calculator/', views.calculator),
     path('demo/', include('demo_app.urls')),  # 分流到demo_app下url,
-    path('', api_views.ping),
-    path('api/', include('api_app.urls'))
+    path('api/', include('api_app.urls')),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
