@@ -31,5 +31,6 @@ urlpatterns = [
     path('demo/', include('demo_app.urls')),  # 分流到demo_app下url,
     path('api/', include('api_app.urls')),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('rest/', include('rest_app.urls')),
 ]
