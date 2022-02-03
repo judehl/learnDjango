@@ -1,2 +1,0 @@
-# learnDjango
-django学习
