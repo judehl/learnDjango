@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',  # 认证应用
     'app_api.apps.AppApiConfig',
     'app_common.apps.AppCommonConfig',
 ]
